@@ -38,7 +38,7 @@ const renderCountriesList = (countries) => {
 };
 
 //Field filtering
-const renderCountryInfo = (country) => {
+const renderCountry = (country) => {
   const markup = `
     <h2>${country.name}</h2>
     <img src="${country.flags.svg}" alt="flag" width="200">
@@ -64,7 +64,7 @@ const onSearch = debounce((event) => {
   fetchCountries(searchQuery)
     .then((countries) => {
       if (countries.length === 1) {
-        renderCountryInfo(countries[0]);
+        renderCountry(countries[0]);
       } else {
         renderCountriesList(countries);
       }
